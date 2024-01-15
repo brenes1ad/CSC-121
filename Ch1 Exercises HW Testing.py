@@ -27,11 +27,35 @@
 #             maxValue = thing
 #     return minValue, maxValue
 
-#Exercise R4
-def sumOfSquares(n):
-    finalNum = 0
-    for thing in range(n):
-        finalNum += thing**2
-    return finalNum
+# #Exercise R4
+# def sumOfSquares(n):
+#     finalNum = 0
+#     for thing in range(n):
+#         finalNum += thing**2
+#     return finalNum
+
+#Exercise R5
+# def shortSumOfSquares(n):
+#     return sum(k**2 for k in range(n))
+
+# #Exercise R6
+# def oddSumOfSquares(n):
+#     finalNum = 0
+#     for thing in range(n):
+#         if thing % 2 != 0:
+#             finalNum += thing**2
+#     return finalNum
+
+#Exercise R7
+# def shortOddSumOfSquares(n):
+#     return sum(n**2 for n in range(n) if n % 2 != 0)
+
+#Exercise R8
+# j = n + k
+#I don't fully understand this
+
+#Excercise R9
+# for thing in range(50,90,10):
+
 
 

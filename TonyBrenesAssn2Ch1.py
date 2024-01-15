@@ -42,3 +42,26 @@ def sumOfSquares(n):
     for thing in range(n):
         finalNum += thing**2
     return finalNum
+
+#R5
+def shortSumOfSquares(n):
+    return sum(k**2 for k in range(n))
+
+#R6
+def oddSumOfSquares(n):
+    finalNum = 0
+    for thing in range(n):
+        if thing % 2 != 0:
+            finalNum += thing**2
+    return finalNum
+
+#R7
+def shortOddSumOfSquares(n):
+    return sum(n**2 for n in range(n) if n % 2 != 0)
+
+#R8
+# j = n + k
+#I don't fully understand this
+
+#R9
+# for thing in range(50,90,10):
