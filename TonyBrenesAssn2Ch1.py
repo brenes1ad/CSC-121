@@ -65,3 +65,16 @@ def shortOddSumOfSquares(n):
 
 #R9
 # for thing in range(50,90,10):
+
+#R9
+#for thing in range(8,-10,-2):
+
+#R10
+doubles = [2**k for k in range(9)]
+
+#R10
+import random
+from random import randrange
+def randrangeAsChoice(list):
+    randIndex = randrange(len(list))
+    return list[randIndex]
