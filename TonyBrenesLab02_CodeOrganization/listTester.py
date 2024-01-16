@@ -41,4 +41,4 @@ def mainListTests(n):
 
 
 if __name__ == "__main__":
-    mainListTests(10_000_000)
+    mainListTests(10_000_00)
