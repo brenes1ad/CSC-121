@@ -66,15 +66,31 @@ def shortOddSumOfSquares(n):
 #R9
 # for thing in range(50,90,10):
 
-#R9
+#R10
 #for thing in range(8,-10,-2):
 
-#R10
+#R11
 doubles = [2**k for k in range(9)]
 
-#R10
+#R12
 import random
 from random import randrange
 def randrangeAsChoice(list):
     randIndex = randrange(len(list))
     return list[randIndex]
+
+#C13
+"""Iterate through the list with a for loop in range of the length of the list. You'd start
+at negative one and decrease your i value by one each step to go through the list backwards.
+You'd then append those values to a new list, therefore reversing the list."""
+"""The main difference between how I would have done it and how the reverse() method works is the built-
+in method doesn't append to a new list, it updates the same list you attached to the funciton but reversed"""
+
+#C14
+def hasOddProductPair(list):
+    for i in range(len(list)):
+        for j in range(i + 1, len(list)):
+            if (list[i] * list[j]) % 2 == 1:
+                return True
+
+    return False

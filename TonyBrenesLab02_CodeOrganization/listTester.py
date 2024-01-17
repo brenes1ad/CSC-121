@@ -26,6 +26,7 @@ def mainListTests(n):
         nums.append(0)
     elapsedSec = timerSec.stop()
     elapsedNS = timerNS.stop()
+    print("Method 1: ")
     print("It took", elapsedSec, "seconds to create list of 10 million zeros using method 1")
     print("It took %d nanoseconds to create list of 10 million zeros using method 1" % elapsedNS)
     print()
@@ -36,6 +37,7 @@ def mainListTests(n):
     nums = [0 for i in range(n)]
     elapsedNS = timerNS.stopNS()
     elapsedSec = timerSec.stop()
+    print("Method 2: ")
     print("It took %d seconds to create list of 10 million zeros using method 2" % elapsedSec)
     print("It took %d nanoseconds to create list of 10 million zeros using method 2" % elapsedNS, "\n")
 
@@ -45,6 +47,7 @@ def mainListTests(n):
     nums = [0] * n
     elapsedNS = timerNS.stopNS()
     elapsedSec = timerSec.stop()
+    print("Method 3: ")
     print("It took %d seconds to create list of 10 million zeros using method 3" % elapsedSec)
     print("It took %d nanoseconds to create list of 10 million zeros using method 3" % elapsedNS)
 
