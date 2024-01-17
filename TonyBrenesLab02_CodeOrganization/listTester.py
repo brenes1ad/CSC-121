@@ -31,13 +31,22 @@ def mainListTests(n):
     print()
 
     # Method 2 -- using a list-comprehension
+    timerNS.startNS()
+    timerSec.start()
     nums = [0 for i in range(n)]
+    elapsedNS = timerNS.stopNS()
+    elapsedSec = timerSec.stop()
+    print("It took %d seconds to create list of 10 million zeros using method 2" % elapsedSec)
+    print("It took %d nanoseconds to create list of 10 million zeros using method 2" % elapsedNS, "\n")
 
     # Method 3 -- built in lists-multiplier
     timerNS.startNS()
+    timerSec.start()
     nums = [0] * n
-    elapsed = timerNS.stopNS()
-    print("It took %d nanoseconds to create list of 10 million zeros using method 3" % elapsed)
+    elapsedNS = timerNS.stopNS()
+    elapsedSec = timerSec.stop()
+    print("It took %d seconds to create list of 10 million zeros using method 3" % elapsedSec)
+    print("It took %d nanoseconds to create list of 10 million zeros using method 3" % elapsedNS)
 
 
 if __name__ == "__main__":
