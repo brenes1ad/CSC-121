@@ -94,3 +94,21 @@ def hasOddProductPair(list):
                 return True
 
     return False
+
+#C15
+def distinctNumbers(list):
+    for i in range(len(list)):
+        for j in range(i+1, len(list)):
+            if list[i] == list[j]:
+                return False
+    return True
+
+#C16
+
+#C17
+
+#C18
+increasingAdd = [k * (k-1) for k in range(1,11,)]
+
+#C19
+letters = [chr(char).lower() for char in range(65, 91)]
