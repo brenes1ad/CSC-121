@@ -24,11 +24,11 @@ def mainListTests(n):
     timerSec.start()
     for i in range(n):
         nums.append(0)
-    elapsedNS = timerNS.stop()
+    elapsedNS = timerNS.stopNS()
     elapsedSec = timerSec.stop()
     print("Method 1: ")
     print("It took %f seconds to create list of 10 million zeros using method 1" % elapsedSec)
-    print("It took %d nanoseconds to create list of 10 million zeros using method 1" % elapsedNS, "\n")
+    print(f"It took {elapsedNS} nanoseconds to create list of 10 million zeros using method 1", "\n")
 
 
     # Method 2 -- using a list-comprehension

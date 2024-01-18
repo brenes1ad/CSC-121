@@ -39,8 +39,6 @@ class Stopwatch:
     def stopNS(self):
         st = self.start_timeNS
         curr = time.perf_counter_ns()
-        print("time = %d and starttime = %d" %(st, curr))
-        print("and their difference is %d" %(curr - st))
         elapsedNS = time.perf_counter_ns() - self.start_timeNS
         self.start_timeNS = 0
         return elapsedNS
