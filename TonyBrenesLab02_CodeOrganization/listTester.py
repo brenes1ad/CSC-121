@@ -20,16 +20,16 @@ def mainListTests(n):
 
     # Method 1 -- using a for-loops
     nums = []
-    timerSec.start()
     timerNS.startNS()
+    timerSec.start()
     for i in range(n):
         nums.append(0)
-    elapsedSec = timerSec.stop()
     elapsedNS = timerNS.stop()
+    elapsedSec = timerSec.stop()
     print("Method 1: ")
-    print("It took", elapsedSec, "seconds to create list of 10 million zeros using method 1")
-    print("It took %d nanoseconds to create list of 10 million zeros using method 1" % elapsedNS)
-    print()
+    print("It took %f seconds to create list of 10 million zeros using method 1" % elapsedSec)
+    print("It took %d nanoseconds to create list of 10 million zeros using method 1" % elapsedNS, "\n")
+
 
     # Method 2 -- using a list-comprehension
     timerNS.startNS()
@@ -38,7 +38,7 @@ def mainListTests(n):
     elapsedNS = timerNS.stopNS()
     elapsedSec = timerSec.stop()
     print("Method 2: ")
-    print("It took %d seconds to create list of 10 million zeros using method 2" % elapsedSec)
+    print("It took %f seconds to create list of 10 million zeros using method 2" % elapsedSec)
     print("It took %d nanoseconds to create list of 10 million zeros using method 2" % elapsedNS, "\n")
 
     # Method 3 -- built in lists-multiplier
@@ -48,7 +48,7 @@ def mainListTests(n):
     elapsedNS = timerNS.stopNS()
     elapsedSec = timerSec.stop()
     print("Method 3: ")
-    print("It took %d seconds to create list of 10 million zeros using method 3" % elapsedSec)
+    print("It took %f seconds to create list of 10 million zeros using method 3" % elapsedSec)
     print("It took %d nanoseconds to create list of 10 million zeros using method 3" % elapsedNS)
 
 

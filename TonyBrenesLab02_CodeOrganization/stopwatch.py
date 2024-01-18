@@ -13,6 +13,7 @@ class Stopwatch:
 
     def __init__(self):
         self.start_time = 0
+        self.start_timeNS = 0
 
     def start(self):
         self.start_time = time.perf_counter()
