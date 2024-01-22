@@ -112,3 +112,47 @@ increasingAdd = [k * (k-1) for k in range(1,11,)]
 
 #C19
 letters = [chr(char).lower() for char in range(65, 91)]
+
+#C20
+
+#C21
+def reverseAfterError():
+    list= []
+    while True:
+        try:
+            list.append(input("Enter something: "))
+        except EOFError:
+            list.reverse()
+            break
+    return list
+
+#C22
+
+#C23
+list = [0,1,2,3]
+try:
+    list[12] = 1
+except IndexError:
+    print("Don't try buffer overflow attacks in python")
+
+#C24
+def countVowels(str):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    count = 0
+    for letter in str:
+        if letter in vowels:
+            count += 1
+    return count
+
+#C25
+def removePunctuation(str):
+    """
+    I know there are more punctuation marks, but I chose the most used
+    and it seemed like a hastle to include them all
+    """
+    punctionation = [',', '.', '!', '?', "\'", ':', ';', "\""]
+    returnSentence = ""
+    for char in str:
+        if char not in punctionation:
+            returnSentence += char
+    return returnSentence
