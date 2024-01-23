@@ -6,6 +6,8 @@ Tony Brenes
 CSC121 W24
 
 1/13/24
+
+All problems were written and tested in a separate file and then copied into this file
 """
 
 #R1
@@ -16,7 +18,7 @@ def isMultiple(n,m):
         return False
 
 #R2
-evens = ["2", "4", "6", "8"]
+evens = ["0", "2", "4", "6", "8"]
 odds = ["1", "3", "5", "7", "9"]
 def isEven(k):
     k = str(k)
@@ -150,9 +152,9 @@ def removePunctuation(str):
     I know there are more punctuation marks, but I chose the most used
     and it seemed like a hastle to include them all
     """
-    punctionation = [',', '.', '!', '?', "\'", ':', ';', "\""]
+    punctuation = [',', '.', '!', '?', "\'", ':', ';', "\""]
     returnSentence = ""
     for char in str:
-        if char not in punctionation:
+        if char not in punctuation:
             returnSentence += char
     return returnSentence

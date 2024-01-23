@@ -7,10 +7,15 @@ CS121 W24
 1/16/24
 Lab2
 """
+
+#Need to implement boolean to throw error when mismatching start
+#and stop timer
 import time
+
 
 class StartStopMismatchError(Exception):
     pass
+
 
 class Stopwatch:
 
@@ -31,6 +36,7 @@ class Stopwatch:
         elapsed = time.perf_counter() - self.start_time
         self.start_time = 0
         return elapsed
+
     def split(self):
         """
         get elapsed time as above but don't reset time
@@ -52,6 +58,7 @@ class Stopwatch:
     def splitNS(self):
         return time.perf_counter_ns() - self.start_timeNS
 
+
 def _test():
     print("Stopwatch tests")
     timer = Stopwatch()
@@ -65,6 +72,7 @@ def _test():
     print("elapsed time =", elapsed)
     print("NS TIme", elapsedNS)
 
+
 try:
     timer = Stopwatch()
     timer.start()
@@ -72,9 +80,6 @@ try:
     print("Exception Error not thrown! Error!")
 except StartStopMismatchError:
     print("Mismatch detected, exception raised")
-
-
-
 
 if __name__ == "__main__":
     _test()
