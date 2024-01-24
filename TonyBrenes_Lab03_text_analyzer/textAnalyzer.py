@@ -10,42 +10,35 @@ Lab3
 
 import os
 
+
 def bookSearcher():
+    # Do the following until a good book is found and input
+    # Print directory listing
+    # Query the user for a book file to input
+    # Open the book file and read into a text string
 
-    #Do the following until a good book is found and input
-    #Print directory listing
-    #Query the user for a book file to input
-    #Open the book file and read into a text string
+    dirList = os.listdir()
+    print("Pick one of these:")
+    for fileName in dirList:
+        if fileName.endswith(".txt"):
+            print(fileName)
+    # USE AN INPUT TO GET THE USER'S CHOICE
+    # Use while loop and Try/Except for user input error
+    bookChoice = "MobyDick.txt"
 
-    while True:
-        dirList = os.listdir()
-        print("Hello")
-        print("Pick one of these:")
-        for fileName in dirList:
-            if fileName.endswith(".txt"):
-                print(fileName)
-        #USE AN INPUT TO GET THE USER'S CHOICE
-        #Use while loop and Try/Except for user input error
-        bookChoice = "MobyDick.txt"
+    f = open(bookChoice, "r")
+    with open(bookChoice, "r", encoding="utf8") as f:
+        bookText = f.read()
 
-        f = open(bookChoice, "r")
-        with open(bookChoice, "r") as f:
-         booktext = f.read()
-
-        print("%s has %d characters" %(bookChoice, len(booktext)))
-        print(booktext[:100])
-
-        #Input words to search for and print out
-        #how many times it was found
-        #continue until no new  word is found
-        #compute how long it took to enter word from user
-        #and find word
-
-        break
+    print("%s has %d characters \n" % (bookChoice, len(bookText)))
+    print(bookText[:100])
 
 
+# Input words to search for and print out
+# how many times it was found
+# continue until no new  word is found
+# compute how long it took to enter word from user
+# and find word
 
 
-
-if __name__ == "__main_":
-    bookSearcher()
+bookSearcher()

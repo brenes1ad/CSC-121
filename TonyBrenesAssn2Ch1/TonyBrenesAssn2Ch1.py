@@ -129,6 +129,7 @@ def reverseAfterError():
     return list
 
 #C22
+#I don't understand as I don't know what dot product is or how to use it in Python
 
 #C23
 list = [0,1,2,3]
@@ -158,3 +159,14 @@ def removePunctuation(str):
         if char not in punctuation:
             returnSentence += char
     return returnSentence
+
+#C26
+#Don't know how to do without tons of if-statements which definitely
+#isn't the point of this problem
+
+#C27
+#I don't understand
+
+#C28
+#From what's given I don't know how you're supposed to know what numbers
+#Go under the nth root
