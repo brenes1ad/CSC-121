@@ -22,27 +22,25 @@ def bookSearcher():
 
     dirList = os.listdir()
     print("Pick one of these:")
-    bookChoiceList = []
     for fileName in dirList:
         if fileName.endswith(".txt"):
             print(fileName)
-            bookChoiceList.append(fileName)
     # USE AN INPUT TO GET THE USER'S CHOICE
     # Use while loop and Try/Except for user input error
     while True:
         try:
-            bookChoice = input("Enter a book choice from the previous list: ")
-            if bookChoice not in bookChoiceList:
+            bookChoice = input("Enter a book choice from the previous list as written from list: ")
+            if bookChoice not in dirList:
                 raise InvalidTitle
             break
         except InvalidTitle:
-            print("Book not in list, please try enter another title ")
+            print("Book not listed, please try enter another text file ")
 
     f = open(bookChoice, "r")
     with open(bookChoice, "r", encoding="utf8") as f:
         bookText = f.read()
 
-    print("%s has %d characters \n" % (bookChoice, len(bookText)))
+    print(f"{bookChoice} has {len(bookText)} characters \n")
     print(bookText[:100])
 
 
