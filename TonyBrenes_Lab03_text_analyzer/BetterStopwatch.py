@@ -24,7 +24,7 @@ class Stopwatch:
         self.start_timeNS = 0
 
     def start(self):
-        self.secondTimer = True
+        self.secondsTimer = True
         self.start_time = time.perf_counter()
 
     def stop(self):
