@@ -40,16 +40,22 @@ def bookSearcher():
     with open(bookChoice, "r", encoding="utf8") as f:
         bookText = f.read()
 
-    print(f"{bookChoice} has {len(bookText)} characters \n")
-    print(bookText[:100])
-
-
 # Input words to search for and print out
 # how many times it was found
 # continue until no new  word is found
 # compute how long it took to enter word from user
 # and find word
 
+
+    while True:
+        count = 0
+        searchWord = input("Enter word to search for in chosen book. Enter \"\" (empty string) to quit search. ")
+        if searchWord == "":
+            break
+        for words in bookText.split():
+            if searchWord.lower() == words.lower():
+                count += 1
+        print(f"{searchWord} was found {count} times \n")
 
 bookSearcher()
 
