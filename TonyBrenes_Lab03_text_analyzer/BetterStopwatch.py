@@ -17,14 +17,16 @@ class StartStopMismatchError(Exception):
     pass
 
 
-class Stopwatch:
+class BetterStopwatch:
 
     def __init__(self):
         self.start_time = 0
         self.start_timeNS = 0
+        self.secondsTimerRunning = False
+        self.NSTimerRunning = False
 
     def start(self):
-        self.secondsTimer = True
+        self.secondsTimerRunning = True
         self.start_time = time.perf_counter()
 
     def stop(self):
@@ -32,9 +34,13 @@ class Stopwatch:
         get elapsed time in fractional seconds and reset to zero
         :return: (float) seconds
         """
+        if self.secondsTimerRunning == False and self.NSTimerRunning == True:
+            raise StartStopMismatchError()
 
         elapsed = time.perf_counter() - self.start_time
         self.start_time = 0
+        self.secondsTimerRunning = False
+
         return elapsed
 
     def split(self):
@@ -42,27 +48,33 @@ class Stopwatch:
         get elapsed time as above but don't reset time
         :return: (float) seconds
         """
+        if self.secondsTimerRunning == False and self.NSTimerRunning == True:
+            raise StartStopMismatchError()
         return time.perf_counter() - self.start_time
 
     def startNS(self):
-        self.secondTimer = False
+        self.NSTimerRunning = True
         self.start_timeNS = time.perf_counter_ns()
 
     def stopNS(self):
-        st = self.start_timeNS
+        if self.secondsTimerRunning == True and self.NSTimerRunning == False:
+            raise StartStopMismatchError()
         curr = time.perf_counter_ns()
         elapsedNS = time.perf_counter_ns() - self.start_timeNS
         self.start_timeNS = 0
+        self.NSTimerRunning = False
         return elapsedNS
 
     def splitNS(self):
+        if self.secondsTimerRunning == True and self.NSTimerRunning == False:
+            raise StartStopMismatchError()
         return time.perf_counter_ns() - self.start_timeNS
 
 
 def _test():
     print("Stopwatch tests")
-    timer = Stopwatch()
-    timerNS = Stopwatch()
+    timer = BetterStopwatch()
+    timerNS = BetterStopwatch()
     timer.start()
     timerNS.startNS()
     for i in range(10_000_000):
@@ -74,14 +86,10 @@ def _test():
 
 
 try:
-    timer = Stopwatch()
-    timer.start()
-    timer.stopNS()
-    print("Exception Error not thrown! Error!")
+    timer = BetterStopwatch()
+    timer.startNS()
+    timer.stop()
+
 except StartStopMismatchError:
     print("Mismatch detected, exception raised")
 
-if __name__ == "__main__":
-    _test()
-else:
-    print("stopwatch's __name__ value: ", __name__)

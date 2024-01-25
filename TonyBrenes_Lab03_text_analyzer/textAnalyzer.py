@@ -9,6 +9,7 @@ Lab3
 """
 
 import os
+import BetterStopwatch
 
 class InvalidTitle(Exception):
     pass
@@ -20,6 +21,7 @@ def bookSearcher():
     # Query the user for a book file to input
     # Open the book file and read into a text string
 
+    timer = BetterStopwatch.BetterStopwatch()
     dirList = os.listdir()
     print("Pick one of these:")
     for fileName in dirList:
@@ -29,12 +31,18 @@ def bookSearcher():
     # Use while loop and Try/Except for user input error
     while True:
         try:
-            bookChoice = input("Enter a book choice from the previous list as written from list: ")
+
+            bookChoice = input("Enter a book choice from the previous list as written fom list: ")
             if bookChoice not in dirList:
                 raise InvalidTitle
             break
         except InvalidTitle:
             print("Book not listed, please try enter another text file ")
+        except KeyboardInterrupt:
+            print("You can't escape yet!")
+        #EOFERROR Still Leads to infinite loop of throwing exception
+
+
 
     f = open(bookChoice, "r")
     with open(bookChoice, "r", encoding="utf8") as f:
@@ -46,16 +54,29 @@ def bookSearcher():
 # compute how long it took to enter word from user
 # and find word
 
-
+    countRuns = 0
+    totalTimeSec = 0
+    totalTimeNS = 0
     while True:
         count = 0
+        timer.start()
         searchWord = input("Enter word to search for in chosen book. Enter \"\" (empty string) to quit search. ")
+        elapsedWord = timer.stop()
+        totalTimeSec += elapsedWord
         if searchWord == "":
             break
         for words in bookText.split():
+            timer.startNS()
             if searchWord.lower() == words.lower():
                 count += 1
-        print(f"{searchWord} was found {count} times \n")
+        print(f"{searchWord} was found {count} times")
+        elapsedSearch = timer.stopNS()
+        countRuns += 1
+        totalTimeNS += elapsedSearch
+    print(f"Average time to enter word: {totalTimeSec / countRuns} seconds")
+    print(f"Average time to find word: {totalTimeNS / countRuns} nanoseconds")
+
 
 bookSearcher()
+
 
