@@ -35,7 +35,7 @@ class BetterStopwatch:
         :return: (float) seconds
         """
         if self.secondsTimerRunning == False and self.NSTimerRunning == True:
-            raise StartStopMismatchError()
+            raise StartStopMismatchError("Tried to stop Nanoseconds timer with Seconds timer")
 
         elapsed = time.perf_counter() - self.start_time
         self.start_time = 0
@@ -58,7 +58,7 @@ class BetterStopwatch:
 
     def stopNS(self):
         if self.secondsTimerRunning == True and self.NSTimerRunning == False:
-            raise StartStopMismatchError()
+            raise StartStopMismatchError("Tried to stop Seconds Timer with NS timer")
         curr = time.perf_counter_ns()
         elapsedNS = time.perf_counter_ns() - self.start_timeNS
         self.start_timeNS = 0
