@@ -69,14 +69,14 @@ def bookSearcher():
             timer.startNS()
             if searchWord.lower() == words.lower():
                 count += 1
-        print(f"{searchWord} was found {count} times")
+        print(f"{searchWord} was found {count} times \n")
         elapsedSearch = timer.stopNS()
         countRuns += 1
         totalTimeNS += elapsedSearch
+    print("")
     print(f"Average time to enter word: {totalTimeSec / countRuns} seconds")
     print(f"Average time to find word: {totalTimeNS / countRuns} nanoseconds")
 
 
 bookSearcher()
-
 

@@ -84,12 +84,12 @@ def _test():
     print("elapsed time =", elapsed)
     print("NS TIme", elapsedNS)
 
+if __name__ == "__main__":
+    try:
+        timer = BetterStopwatch()
+        timer.startNS()
+        timer.stop()
 
-try:
-    timer = BetterStopwatch()
-    timer.startNS()
-    timer.stop()
-
-except StartStopMismatchError:
-    print("Mismatch detected, exception raised")
+    except StartStopMismatchError:
+        print("Mismatch detected, exception raised")
 
