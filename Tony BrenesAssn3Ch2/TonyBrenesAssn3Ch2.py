@@ -57,3 +57,17 @@ def charge(self, price):
     else:
         self._balance += price
     return True
+
+#R7
+def __init__ (self, cutsomer, bank, acnt, limit, balance=0):
+    self.cutsomer = cutsomer
+    self.bank = bank
+    self.acnt = acnt
+    self.limit = limit
+    self.balance = balance
+
+#R8
+# for val in range(1, 59):
+#Card 3 is the first to go over
+
+#R9
