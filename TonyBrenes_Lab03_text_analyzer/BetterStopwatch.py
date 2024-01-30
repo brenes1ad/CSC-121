@@ -34,7 +34,7 @@ class BetterStopwatch:
         get elapsed time in fractional seconds and reset to zero
         :return: (float) seconds
         """
-        if self.secondsTimerRunning == False and self.NSTimerRunning == True:
+        if self.secondsTimerRunning is False and self.NSTimerRunning is True:
             raise StartStopMismatchError("Tried to stop Nanoseconds timer with Seconds timer")
 
         elapsed = time.perf_counter() - self.start_time
@@ -48,7 +48,7 @@ class BetterStopwatch:
         get elapsed time as above but don't reset time
         :return: (float) seconds
         """
-        if self.secondsTimerRunning == False and self.NSTimerRunning == True:
+        if self.secondsTimerRunning is False and self.NSTimerRunning is True:
             raise StartStopMismatchError()
         return time.perf_counter() - self.start_time
 
@@ -57,7 +57,7 @@ class BetterStopwatch:
         self.start_timeNS = time.perf_counter_ns()
 
     def stopNS(self):
-        if self.secondsTimerRunning == True and self.NSTimerRunning == False:
+        if self.secondsTimerRunning is True and self.NSTimerRunning is False:
             raise StartStopMismatchError("Tried to stop Seconds Timer with NS timer")
         curr = time.perf_counter_ns()
         elapsedNS = time.perf_counter_ns() - self.start_timeNS
@@ -66,7 +66,7 @@ class BetterStopwatch:
         return elapsedNS
 
     def splitNS(self):
-        if self.secondsTimerRunning == True and self.NSTimerRunning == False:
+        if self.secondsTimerRunning is True and self.NSTimerRunning is False:
             raise StartStopMismatchError()
         return time.perf_counter_ns() - self.start_timeNS
 
