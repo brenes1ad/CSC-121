@@ -71,3 +71,75 @@ def __init__ (self, cutsomer, bank, acnt, limit, balance=0):
 #Card 3 is the first to go over
 
 #R9
+def __sub__(self, other):
+    if len(self) != len(other):
+        raise ValueError("Length mismatch")
+    result = Vector(len(self))
+    for thing in range (len(self)):
+        result[thing] = self[thing] - other[thing]
+    return result
+
+#R10
+def __neg__(self):
+    for i in range (len(self)):
+        self[i] = self[i] * -1
+    return self
+
+#R11
+"""
+I really don't know. In lab, we mentioned needed a rmul() for fraction so maybe
+there's a radd thing that we would need for these vectors"""
+
+#R12
+def __mul__(self, n):
+    for i in range (len(self)):
+        self[i] = 3 * self[i]
+    return self
+
+#R13
+def __rmul__(self, n):
+    for thing in range(len(self)):
+        self[thing] = self[thing] * n
+    return self
+
+#R14
+def __mul__(self, other):
+    if len(self) != len(other):
+        raise ValueError("Mismatching dimensions")
+    dotProduct = 0
+    for i in range(len(self)):
+        dotProduct = dotProduct + (self[i] * other[i])
+    return dotProduct
+
+#R15
+def __init__(self, d, listToVec=None):
+    if isinstance(d, int):
+        self.coords = [0] * d
+    else:
+        self.coords = list(listToVec)
+
+#R16
+
+#R17
+#Submitted as pdf
+
+#R18
+thing = FibonacciProgression(2,2)
+for i in range(7)
+    thing.advance()
+
+#R19
+#7.205759404E16
+
+#R20
+
+#R21
+
+#R22
+def __eq__(self, other):
+    for i in range(len(self)):
+        if self[i] != other[i]:
+            return False
+    return True
+
+#R23
