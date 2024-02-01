@@ -124,9 +124,9 @@ def __init__(self, d, listToVec=None):
 #Submitted as pdf
 
 #R18
-thing = FibonacciProgression(2,2)
-for i in range(7)
-    thing.advance()
+# thing = FibonacciProgression(2,2)
+# for i in range(7)
+#     thing.advance()
 
 #R19
 #7.205759404E16

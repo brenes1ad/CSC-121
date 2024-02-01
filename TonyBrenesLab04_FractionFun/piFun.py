@@ -6,9 +6,6 @@ CSC121 W24
 1/30/24
 
 Leibniz/Gregory Formula: pi/4 = 1 - 1/3 + 1/5 - 1/7 ...
-Let's try a different one: pi**2 /(over) 6 = sum_k = 1^inf 1 /(over) k^2
-    For value of pi: take square root and then multiply by 6
-    - 1 over 1 squared + 1 over 2 squared + 1 over 3 squared
 Let's try e instead, using Euler's formula e =sum_i=0^inf 1/(over) i!(factorial)
     -1 over zero factorial + 1  over 1 Factorial + 1 over 2 factorial ...
 """
@@ -33,7 +30,15 @@ print("with a relative error of", math.fabs(piFloat - math.pi) / math.pi)
 
 
 # Now do other pi formula. Remember to take sqrt and then multiply by 6
-
+"""Let's try a different one: pi**2 /(over) 6 = sum_k = 1^inf 1 /(over) k^2
+    For value of pi: take square root and then multiply by 6
+    - 1 over 1 squared + 1 over 2 squared + 1 over 3 squared"""
+piSqrtOver6 = Frac.ZERO
+for i in range(1, numTerms):
+    piSqrtOver6 = piSqrtOver6 + Frac(1, i**2)
+piSqrOver6Float = float(piSqrtOver6)
+piFloat = (piSqrOver6Float * 6) ** 0.5
+print(f"Method 2 pi calculated to be: {piFloat}")
 
 
 # Now do Euler's e formula
