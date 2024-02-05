@@ -64,7 +64,7 @@ for i in range(0, numTermsE):
     calculatedE = calculatedE + Frac(1, int(factorial(i)))
 print(f"Calculted e: {float(calculatedE)}")
 print(f"Real e: {math.e}")
-print(f"error{float(calculatedE) - math.e}")
+print(f"error: {float(calculatedE) - math.e}")
 
 """It is impossible to converge to 5 decimal points of accuracy for either pi
 calculation because you get a string length limit.

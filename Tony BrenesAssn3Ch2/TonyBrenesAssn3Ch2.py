@@ -93,7 +93,7 @@ there's a radd thing that we would need for these vectors"""
 #R12
 def __mul__(self, n):
     for i in range (len(self)):
-        self[i] = 3 * self[i]
+        self[i] = n * self[i]
     return self
 
 #R13
@@ -137,9 +137,26 @@ def __init__(self, d, listToVec=None):
 
 #R22
 def __eq__(self, other):
+    if len(self) != len(other):
+        return False
     for i in range(len(self)):
         if self[i] != other[i]:
             return False
     return True
 
 #R23
+def __lt__(self, other):
+    if len(self) < len(other):
+        for i in range(len(self)):
+            if self[i] > other[i]:
+                return False
+            if self[i] < other[i]:
+                return True
+        return True
+    elif len(other) <= len(self):
+        for i in range(len(other)):
+            if self[i] > other[i]:
+                return False
+            if self[i] < other[i]:
+                return True
+        return False
