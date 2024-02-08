@@ -4,9 +4,15 @@ myTriangle.py -- create a triangle object
 
 from myPolygon import MyPolygon
 import graphics as gr
+from helperFunctions import *
+
 
 class MyTriangle(MyPolygon):
+
+    from helperFunctions import randtheta, cosd, sind
+
     """a MyPolygon class to create random triangles"""
+
 
     def __init__(self, width=200, height=200):
         """creates a random triangle in a width x height box"""
@@ -24,10 +30,11 @@ class MyTriangle(MyPolygon):
         self.c = gr.Point(r * self.cosd(theta) + centerx, r * self.sind(theta) + centery)
 
     def area(self):
-        return 5
+        return triArea(self.a, self.b, self.c)
 
     def peri(self):
-        return 5
+        return distBetweenPoints(self.a, self.b) + distBetweenPoints(self.b, self.c) + distBetweenPoints(self.c, self.a)
 
     def draw(self):
         pass
+
