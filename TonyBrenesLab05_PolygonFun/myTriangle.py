@@ -36,5 +36,9 @@ class MyTriangle(MyPolygon):
         return distBetweenPoints(self.a, self.b) + distBetweenPoints(self.b, self.c) + distBetweenPoints(self.c, self.a)
 
     def draw(self):
-        pass
+        win = gr.GraphWin("Triangle", self.w, self.h)
+        c = gr.Polygon(self.a, self.b, self.c)
+        c.draw(win)
+        win.getMouse()
+        win.close()
 

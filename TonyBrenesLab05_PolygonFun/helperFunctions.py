@@ -3,7 +3,7 @@ helperFunctions.py -- needed calculation functions for other classes
 """
 
 from random import random
-from math import sin, cos, pi, sqrt
+from math import sin, cos, pi, sqrt, hypot
 import graphics as gr
 
 def randtheta(a, b):
@@ -28,14 +28,16 @@ def sind(deg):
     return sin(2 * pi * deg / 360)
 
 def distBetweenPoints(a, b):
-    return sqrt(((b.getX() - a.getX()) ** 2) + ((b.getY() - a.getY()) ** 2))
+    x1, y1 = a.getX(), a.getY()
+    x2, y2 = b.getX(), b.getY()
+    return hypot(x2 - x1, y2 - y1)
 
 def triArea(a, b, c):
-    s = ((distBetweenPoints(a,b) + distBetweenPoints(b,c) + distBetweenPoints(c,a)) / 2)
     aDist = distBetweenPoints(a,b)
     bDist = distBetweenPoints(b,c)
     cDist = distBetweenPoints(c,a)
-    return sqrt(s*((s-aDist)*(s-bDist)*(s-cDist)))
+    s = (aDist + bDist + cDist) // 2
+    return sqrt(s*(s-aDist)*(s-bDist)*(s-cDist))
 
 
 
