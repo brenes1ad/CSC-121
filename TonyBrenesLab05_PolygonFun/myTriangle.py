@@ -19,15 +19,15 @@ class MyTriangle(MyPolygon):
         self.w = width
         self.h = height
 
-        r = width / 2
+        self.r = self.w / 2
         centerx = self.w / 2
         centery = self.h / 2
-        theta = self.randtheta(0, 120)
-        self.a = gr.Point(r * self.cosd(theta) + centerx, r * self.sind(theta) + centery)
-        theta = self.randtheta(120, 240)
-        self.b = gr.Point(r * self.cosd(theta) + centerx, r * self.sind(theta) + centery)
-        theta = self.randtheta(240, 360)
-        self.c = gr.Point(r * self.cosd(theta) + centerx, r * self.sind(theta) + centery)
+        theta = randtheta(0, 120)
+        self.a = gr.Point(self.r * cosd(theta) + centerx, self.r * sind(theta) + centery)
+        theta = randtheta(120, 240)
+        self.b = gr.Point(self.r * cosd(theta) + centerx, self.r * sind(theta) + centery)
+        theta = randtheta(240, 360)
+        self.c = gr.Point(self.r * cosd(theta) + centerx, self.r * sind(theta) + centery)
 
     def area(self):
         return triArea(self.a, self.b, self.c)

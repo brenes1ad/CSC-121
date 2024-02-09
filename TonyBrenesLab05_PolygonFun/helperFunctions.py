@@ -28,7 +28,7 @@ def sind(deg):
     return sin(2 * pi * deg / 360)
 
 def distBetweenPoints(a, b):
-    return sqrt(((b.getX() - a.getX()) ** 2) + (b.getY() - a.getY()) ** 2)
+    return sqrt(((b.getX() - a.getX()) ** 2) + ((b.getY() - a.getY()) ** 2))
 
 def triArea(a, b, c):
     s = ((distBetweenPoints(a,b) + distBetweenPoints(b,c) + distBetweenPoints(c,a)) / 2)
@@ -36,5 +36,7 @@ def triArea(a, b, c):
     bDist = distBetweenPoints(b,c)
     cDist = distBetweenPoints(c,a)
     return sqrt(s*((s-aDist)*(s-bDist)*(s-cDist)))
+
+
 
 

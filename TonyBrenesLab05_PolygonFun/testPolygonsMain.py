@@ -4,10 +4,12 @@ testPolygonsMain.py -- test the polygon code
 
 import graphics as gr
 import myPolygon
-import myTriangle as tr
+from myTriangle import *
 
-triangle = tr.MyTriangle(200,200)
-triangle.draw()
+triangle = MyTriangle(200,200)
+print(f"perimeter: {triangle.peri()}")
+print(f"area: {triangle.area()}")
+
 
 
 
