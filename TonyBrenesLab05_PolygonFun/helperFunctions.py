@@ -33,11 +33,11 @@ def distBetweenPoints(a, b):
     return hypot(x2 - x1, y2 - y1)
 
 def triArea(a, b, c):
-    aDist = distBetweenPoints(a,b)
-    bDist = distBetweenPoints(b,c)
-    cDist = distBetweenPoints(c,a)
-    s = (aDist + bDist + cDist) // 2
-    return sqrt(s*(s-aDist)*(s-bDist)*(s-cDist))
+    aDist = distBetweenPoints(a, b)
+    bDist = distBetweenPoints(b, c)
+    cDist = distBetweenPoints(c, a)
+    s = (aDist + bDist + cDist) / 2
+    return sqrt(s*(s - aDist)*(s - bDist)*(s - cDist))
 
 
 
