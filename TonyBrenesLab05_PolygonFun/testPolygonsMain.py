@@ -9,7 +9,7 @@ from myQuadrilateral import *
 
 
 print("Triangle:")
-triangle = MyTriangle(200,200)
+triangle = MyTriangle()
 print(f"perimeter: {triangle.peri()}")
 print(f"area: {triangle.area()}")
 triangle.draw()

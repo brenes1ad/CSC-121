@@ -48,8 +48,32 @@ class MyEquilTriangle(MyTriangle):
         self.w = width
         self.h = height
 
-        self.r = self.w / 2
+        r = self.w / 2
         centerx = self.w / 2
         centery = self.h / 2
         theta = randtheta(0,120)
+
+        self.a = gr.Point(r * cosd(theta) + centerx, r * sind(theta) + centery)
+        self.b = gr.Point(r * cosd(theta + 120) + centerx, r * sind(theta + 120) + centery)
+        self.c = gr.Point(r * cosd(theta + 240) + centerx, r * sind(theta + 240) + centery)
+
+
+class MyIsos(MyTriangle):
+    def __init__(self, width=200, height=200):
+
+        self.w = width
+        self.h = height
+
+        r = self.w / 2
+        centerx = self.w / 2
+        centery = self.h / 2
+        theta1 = randtheta(0,360)
+        theta2 = randtheta(0,180)
+
+        self.a = gr.Point(r * cosd(theta1) + centerx, r * sind(theta1) + centery)
+        self.b = gr.Point(r * cosd(theta1 + theta2) + centerx, r * sind(theta1 + theta2) + centery)
+        self.c = gr.Point(r * cosd(theta1 + 2*theta2) + centerx, r * sind(theta1 + 2*theta2) + centery)
+
+
+
 
