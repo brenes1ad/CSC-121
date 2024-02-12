@@ -4,23 +4,29 @@ testPolygonsMain.py -- test the polygon code
 
 import graphics as gr
 import myPolygon
+from TonyBrenesLab05_PolygonFun import myQuadrilateral
 from myTriangle import *
 from myQuadrilateral import *
 
 
-print("Triangle:")
-triangle = MyTriangle()
-print(f"perimeter: {triangle.peri()}")
-print(f"area: {triangle.area()}")
-triangle.draw()
+shapes = [MyRectangle, MyQuadrilateral, MySquare, MyTriangle, MyEquilTriangle, MyIsos]
+shapeNames = []
 
 
-print(" \n Quadrilateral:")
-quad = MyQuadrilateral()
-print(f"perimeter: {quad.peri()}")
-print(f"area: {quad.area()}")
-quad.draw()
-
+while True:
+    for shape in shapes:
+        shapeNames.append(shape.__name__)
+        print(shape.__name__)
+    a = input("Enter shape class name(enter empty string to quit: ")
+    if a not in shapeNames and a != "":
+        print("Invalid shape. Try again \n")
+    for x in shapes:
+        if a.lower() == x.__name__.lower():
+            b = x()
+            b.draw()
+            print("")
+    if a == "":
+        break
 
 
 
