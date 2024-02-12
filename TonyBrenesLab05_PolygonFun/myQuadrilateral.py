@@ -36,11 +36,5 @@ class MyQuadrilateral(MyPolygon):
 
     def peri(self):
         return ((distBetweenPoints(self.a, self.b)) + (distBetweenPoints(self.b, self.c))
-        + (distBetweenPoints(self.c, self.d)))
-        + (distBetweenPoints(self.d, self.a))
-
-
-quad = MyQuadrilateral()
-quad.draw()
-print(f"peri: {quad.peri()}")
-print(f"area: {quad.area()}")
+        + (distBetweenPoints(self.c, self.d))
+        + (distBetweenPoints(self.d, self.a)))
