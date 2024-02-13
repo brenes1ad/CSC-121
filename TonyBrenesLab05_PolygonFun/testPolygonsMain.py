@@ -1,5 +1,10 @@
 """
-testPolygonsMain.py -- test the polygon code
+testPolygonsMain.py -- gives menu to choose a shape object, draws the shape, and prints area and perimeter
+
+Tony Brenes
+CSC121 W24
+1/6/24
+Lab 5
 """
 
 import graphics as gr
@@ -16,7 +21,7 @@ while True:
     for shape in shapes:
         shapeNames.append(shape.__name__.lower())
         print(shape.__name__)
-    a = input("Enter shape class name(enter empty string to quit: ")
+    a = input("Enter shape class name to create the shape(enter empty string to quit: ")
     if a.lower() not in shapeNames and a != "":
         print("Invalid shape. Try again \n")
     for x in shapes:

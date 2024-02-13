@@ -1,5 +1,10 @@
 """
 helperFunctions.py -- needed calculation functions for other classes
+
+Tony Brenes
+CSC121 W24
+2/6/24
+Lab 5
 """
 
 from random import random
@@ -28,11 +33,16 @@ def sind(deg):
     return sin(2 * pi * deg / 360)
 
 def distBetweenPoints(a, b):
+    """return the distance between points a and b using distance formula
+    :param a and b: Points"""
+
     x1, y1 = a.getX(), a.getY()
     x2, y2 = b.getX(), b.getY()
     return hypot(x2 - x1, y2 - y1)
 
 def triArea(a, b, c):
+    """return the area of the triangle defined by points a,b,c
+    :param a,b,c: Points"""
     aDist = distBetweenPoints(a, b)
     bDist = distBetweenPoints(b, c)
     cDist = distBetweenPoints(c, a)

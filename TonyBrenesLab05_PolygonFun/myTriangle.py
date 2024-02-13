@@ -1,5 +1,11 @@
 """
-myTriangle.py -- create a triangle object
+myTriangle.py -- Creates triangle, equilateral triangle, and isosceles triangle objects. Calculates area and perimeter.
+Draws object
+
+Tony Brenes
+CSC121 W24
+2/7/24
+Lab 5
 """
 
 from myPolygon import MyPolygon
