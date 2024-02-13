@@ -15,10 +15,10 @@ shapeNames = []
 
 while True:
     for shape in shapes:
-        shapeNames.append(shape.__name__)
+        shapeNames.append(shape.__name__.lower())
         print(shape.__name__)
     a = input("Enter shape class name(enter empty string to quit: ")
-    if a not in shapeNames and a != "":
+    if a.lower() not in shapeNames and a != "":
         print("Invalid shape. Try again \n")
     for x in shapes:
         if a.lower() == x.__name__.lower():
