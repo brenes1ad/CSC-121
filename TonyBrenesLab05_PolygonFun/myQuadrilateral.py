@@ -1,5 +1,11 @@
 """
-myQuadrilateral.py -- Create quadrilateral object and subclass of quadrilateral class
+myQuadrilateral.py -- Creates quadrilateral, rectangle, and square objects. Calculates area and perimeter.
+Draws object
+
+Tony Brenes
+CSC121 W24
+2/7/24
+Lab 5
 """
 
 from myPolygon import MyPolygon

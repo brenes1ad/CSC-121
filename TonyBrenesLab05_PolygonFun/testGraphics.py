@@ -1,5 +1,6 @@
 """
 testGraphics.py -- testing graphics.py, Zelle's module for simple display
+
 Tony Brenes
 CSC121 W24
 2/6/24
