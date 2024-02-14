@@ -6,7 +6,7 @@ timer = BetterStopwatch.BetterStopwatch()
 k = 500
 averageTimes = []
 checkLog = []
-for n in range(11):
+for n in range(12):
     totalTime = 0
     for i in range(20):
         list = [randint(1, 100) for i in range(k)]
