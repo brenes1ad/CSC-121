@@ -6,8 +6,7 @@ timer = BetterStopwatch.BetterStopwatch()
 k = 500
 averageTimes = []
 checkLog = []
-for n in range(12):
-    k *= 2
+for n in range(11):
     totalTime = 0
     for i in range(20):
         list = [randint(1, 100) for i in range(k)]
@@ -18,6 +17,7 @@ for n in range(12):
     averageTime = totalTime / 20
     averageTimes.append(averageTime)
     checkLog.append(averageTime / (k*log2(k)))
+    k *= 2
 print(averageTimes)
 print(checkLog)
 
