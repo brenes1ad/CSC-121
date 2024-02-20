@@ -1,3 +1,12 @@
+"""
+timeTrials.py -- testing order of speed function of our gcd function and of the built in sort() function
+
+Tony Brenes
+CSC121 W24
+2/13/24
+Lab 6
+"""
+
 import BetterStopwatch
 from random import randint
 from math import log2
@@ -21,7 +30,7 @@ print("List sorting:")
 print("%7s %10s %20s" % ("k", "averageTime", "averageTime / (k*log2(k))"))
 for n in range(12):
     totalTime = 0
-    for i in range(20):
+    for i in range(40):
         list = [randint(1, 100) for i in range(k)]
         timer.startNS()
         list.sort()

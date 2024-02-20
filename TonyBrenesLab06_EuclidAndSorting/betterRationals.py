@@ -4,6 +4,7 @@ Some test code for rational numbers
 A. Thall
 CSC 121 W24
 1/28/24
+*Updated to use gcd function to generate reduced fractions
 """
 
 
