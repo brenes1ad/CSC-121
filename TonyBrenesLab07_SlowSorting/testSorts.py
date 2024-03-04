@@ -21,20 +21,20 @@ numTrials = 30
 for n in sizes:
     comps1 = 0
     comps2 = 0
-    comps3 = 0
+    swaps3 = 0
     for trial in range(numTrials):
         arr1 = [randint(0, n * 10) for i in range(n)]
         arr2 = list(arr1)
         arr3 = list(arr1)
         comps1 += selection_sort(arr1)
         comps2 += insertion_sort(arr2)
-        comps3 += bubble_sort(arr3)
+        swaps3 += bubble_sort(arr3)
     comps1 /= numTrials
     comps2 /= numTrials
-    comps3 /= numTrials
+    swaps3 /= numTrials
     selectTrials.append((n, comps1))
     insertTrials.append((n, comps2))
-    bubbleTrials.append((n, comps3))
+    bubbleTrials.append((n, swaps3))
 print("Selection Sort")
 asympPrintout(selectTrials)
 print("")
