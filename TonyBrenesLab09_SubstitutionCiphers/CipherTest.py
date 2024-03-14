@@ -7,6 +7,8 @@ Lab 09
 """
 from caesar import CaesarCipher
 from SubstitutionCipher import SubstitutionCipher
+from RandomCipher import RandomCipher
+from childCaesar import ChildCaesar
 from random import shuffle
 
 if __name__ == '__main__':
@@ -27,3 +29,18 @@ if __name__ == '__main__':
   print('Secret: ', coded)
   answer = cipher.decrypt(coded)
   print('Message:', answer)
+
+  cipher = RandomCipher()
+  message = "THE EAGLE IS IN play; MEET AT JOE'S."
+  coded = cipher.encrypt(message)
+  print('Secret: ', coded)
+  answer = cipher.decrypt(coded)
+  print('Message:', answer)
+
+  cipher = ChildCaesar(3)
+  message = "THE EAGLE IS IN play; MEET AT JOE'S."
+  coded = cipher.encrypt(message)
+  print('Secret: ', coded)
+  answer = cipher.decrypt(coded)
+  print('Message:', answer)
+
