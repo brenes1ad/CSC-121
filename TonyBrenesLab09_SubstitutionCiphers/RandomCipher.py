@@ -1,3 +1,13 @@
+"""
+RandomCipher.py -- subclass of SubstitutionCipher that uses a randomized order of the alphabet, upper and lower,
+and digits as the encode string.
+
+Tony Brenes
+CSC121 W24
+3/14/24
+Lab09
+"""
+
 import string
 
 from SubstitutionCipher import SubstitutionCipher
