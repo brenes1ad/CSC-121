@@ -17,11 +17,8 @@ class TextArrPriorityQ(ArrayQueue):
             return
         dex = (self.front + self.size - 1) % len(self.data)
         prev = (dex - 1) % len(self.data)
-        while self.data[dex][0] < self.data[prev][0]:
+        while dex != self.front and self.data[dex][0] < self.data[prev][0]:
             self.data[dex], self.data[prev] = self.data[prev], self.data[dex]
             dex = prev
             prev = (prev - 1) % len(self.data)
-            if self.data[prev] is None:
-                break
-
 
