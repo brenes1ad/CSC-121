@@ -1,5 +1,5 @@
 """
-queueTest.py --
+queueTest.py -- test code for array queue and priority queue
 
 Tony Brenes
 CSC121 W24
