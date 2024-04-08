@@ -7,11 +7,11 @@ CSC121 W24
 """
 class LinkedTree():
     class Node:
-        def __init__(self, element, parent=None, childrenList = []):
+        def __init__(self, element, parent=None, childrenList=None):
             self.element = element
             self.parent = parent
             # needs to be a list of references to children of node
-            self.childrenList = childrenList
+            self.childrenList = childrenList or []
 
     class Position:
         def __init__(self, container, node):
@@ -34,4 +34,27 @@ class LinkedTree():
             return p.node
 
         def makePosition(self, node):
-            return LinkedTree.Position(self, node) if node is not None else None
+            return self.Position(self, node) if node is not None else None
+
+    def __init__(self):
+        self.root = None
+        self.size = 0
+
+    def root(self):
+        return self.makePosition(self.root)
+
+    def parent(self, p):
+        node = self.validate(p)
+        return self.makePosition(node.parent)
+
+    def addRoot(self, e):
+        if self.root is not None: raise ValueError("Root Exists")
+        self.size = 1
+        self.root = self.Node(e)
+        return self.makePosition(self.root)
+
+    def addChild(self, p, e):
+        node = self.validate(p)
+        self.size += 1
+        self.childrenList.append(self.Node(e, node))
+        return self.makePosition(self.Node(e))
