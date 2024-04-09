@@ -1,10 +1,11 @@
 from gameTree import GameTree
+import PySimpleGUI as sg
 
 class QueryNode(GameTree):
 
     def play(self):
-        ans = input(self.question + " ('y' or 'n')")
-        if ans[0].lower() == 'y':
+        ans = sg.popup_yes_no(self.question, title="My Question")
+        if ans == 'Yes':
             self.yesNode = self.yesNode.play()
         else:
             self.noNode = self.noNode.play()
