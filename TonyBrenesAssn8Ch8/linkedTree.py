@@ -40,7 +40,7 @@ class LinkedTree():
         self.root = None
         self.size = 0
 
-    def root(self):
+    def getroot(self):
         return self.makePosition(self.root)
 
     def parent(self, p):

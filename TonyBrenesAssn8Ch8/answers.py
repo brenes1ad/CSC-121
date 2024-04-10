@@ -5,6 +5,7 @@ CSC121 W24
 4/4/2024
 """
 from arrayBinaryTree import ArrayBinaryTree
+from linkedTree import LinkedTree
 
 #R1
 """a.) /user/rt/courses/"""
@@ -27,3 +28,9 @@ tree.addRightChild(3,12)
 
 for i in range(10):
     print(tree.tree[i])
+
+tree = LinkedTree()
+tree.addRoot("car")
+tree.addChild(tree.getroot(), "wheel")
+tree.addChild(tree.getroot(), "seats")
+print(tree.getroot().node.childrenList)
